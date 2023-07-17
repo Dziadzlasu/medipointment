@@ -8,4 +8,7 @@ class Patient < ApplicationRecord
   validates :city, length: { minimum: 3 }
   validates :date_of_birth, date: { before: Proc.new { Time.now } }
   validates :sex, inclusion: { in: %w(M K) }
+
+  has_many :appointments, dependent: :destroy
+  has_many :physicians, through: :appointments
 end
