@@ -57,6 +57,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.0', '>= 6.0.3'
   gem 'pry', '~> 0.14.2'
   gem 'pry-nav', '~> 1.0'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'rubocop', '~> 1.54', '>= 1.54.2', require: false
 end
 
 group :development do
@@ -75,4 +77,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'ffaker', '~> 2.21'
 end
