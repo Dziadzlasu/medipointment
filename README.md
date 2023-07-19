@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To import the patient data, run the following command:
 
-Things you may want to cover:
+```bash
+rake import:patients
+```
 
-* Ruby version
+To create a list of physicians, run the following command:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+# The number in brackets is the number of physicians to create (default is 30)
+rake import:physicians'[15]'
+```
