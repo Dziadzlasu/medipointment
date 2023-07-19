@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Powrót do listy wizyt"), appointments_path %>
+
+  <div class="header">
+    <h1>Nowa wizyta</h1>
+  </div>
+
+  <%= render "form", appointment: @appointment %>
+</main>

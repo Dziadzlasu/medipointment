@@ -1,0 +1,6 @@
+<div class="patient">
+  <%= patient.full_name %>
+  <div class="patient__actions">
+    <%= button_to "Dodaj wizytę", new_appointment_path, params: { patient: patient }, method: :get, class: "btn btn-primary" %>
+  </div>
+</div>
