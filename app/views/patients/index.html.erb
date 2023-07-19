@@ -12,6 +12,7 @@
     <th><%= sort_link(@q, :city, "Miasto", default_order: :desc)%> </th>
     <th><%= "Pesel" %> </th>
     <th><%= "Wizyty" %> </th>
+    <th><%= link_to "Cofnij sortowanie", request.path, class: "btn-primary" %></th>
   </tr>
   <% @patients.each do |p| %>
   <tr>
@@ -21,7 +22,7 @@
     <td><%= p.city %></td>
     <td><%= p.pesel %></td>
     <td><%= link_to p.appointments.count, appointments_patient_path(p) %></td>
-    <td><%= button_to "Dodaj wizytę", new_appointment_path, params: { patient_id: p }, method: :get, class: "btn btn-primary" %></td>
+    <td><%= button_to "Dodaj wizytę", new_appointment_path, params: { patient_id: p }, method: :get, class: "btn-primary" %></td>
   </tr>
   <% end %>
 </table>
