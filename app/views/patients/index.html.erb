@@ -1,6 +1,6 @@
 <main class="container">
   <div class="h-8 text-xl">
-    Lista pacjentów
+    Lista pacjentów  <%= link_to "★Wykres★", chart_patients_path, class: "text-green-500" %>
   </div>
 
   <div class="flex">
@@ -21,7 +21,7 @@
     <td><%= p.city %></td>
     <td><%= p.pesel %></td>
     <td><%= link_to p.appointments.count, appointments_patient_path(p) %></td>
-    <td><%= button_to "Dodaj wizytę", new_appointment_path, params: { patient: p }, method: :get, class: "btn btn-primary" %></td>
+    <td><%= button_to "Dodaj wizytę", new_appointment_path, params: { patient_id: p }, method: :get, class: "btn btn-primary" %></td>
   </tr>
   <% end %>
 </table>

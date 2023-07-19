@@ -1,0 +1,8 @@
+<main class="container">
+<%= link_to sanitize("&larr; Powrót do listy pacjentów"), patients_path %>
+  <div class="h-8 text-xl">
+    Pacjenci według roku urodzin
+  </div>
+
+<%= line_chart Patient.group_by_year(:date_of_birth).count %>
+</main>

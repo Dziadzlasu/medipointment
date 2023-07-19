@@ -87,3 +87,5 @@ end
 gem "tailwindcss-rails", "~> 2.0"
 gem 'ffaker', '~> 2.21'
 gem 'ransack'
+gem "chartkick"
+gem "groupdate"

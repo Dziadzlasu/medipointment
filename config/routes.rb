@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     member do
       get :appointments
     end
+    collection do
+      get :chart
+    end
   end
 
   resources :appointments
