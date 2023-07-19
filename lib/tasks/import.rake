@@ -10,4 +10,37 @@ namespace :import do
       Patient.create!(patient_data)
     end
   end
+
+  task :physicians, [:arg] => :environment do |t, args|
+    number_of_doctors = args[:arg].to_i || 30
+    SPECIALIZATIONS = [
+      'Alergolog',
+      'Chirurg',
+      'Dermatolog - Wenerolog',
+      'Diabetolog',
+      'Endokrynolog',
+      'Gastroenterolog',
+      'Ginekolog',
+      'Hematolog',
+      'Kardiolog',
+      'Internista',
+      'Neurolog',
+      'Okulista',
+      'Onkolog',
+      'Ortopeda',
+      'Pulmonolog',
+      'Psychiatra',
+      'Reumatolog'
+    ]
+
+    number_of_doctors.times do
+      physician_attributes = {
+        first_name: FFaker::NamePL.first_name,
+        last_name: FFaker::NamePL.last_name,
+        specialization: SPECIALIZATIONS.sample
+      }
+      puts "Creating physician: #{physician_attributes[:first_name]} #{physician_attributes[:last_name]} #{physician_attributes[:specialization]}"
+      Physician.create!(physician_attributes)
+    end
+  end
 end

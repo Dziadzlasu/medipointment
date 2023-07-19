@@ -82,7 +82,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'shoulda-matchers', '~> 5.0'
-  gem 'ffaker', '~> 2.21'
 end
 
 gem "tailwindcss-rails", "~> 2.0"
+gem 'ffaker', '~> 2.21'
+gem 'ransack'

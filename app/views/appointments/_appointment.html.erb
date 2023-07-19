@@ -5,7 +5,7 @@
   <%= appointment.patient.last_name %>
   <%= appointment.price %> PLN
   <div class="appointment_actions">
-    <%= button_to "Edytuj", edit_appointment_path(appointment), params: { patient: appointment.patient }, method: :get, class: "btn btn-primary" %>
-    <%= button_to "Usuń", appointment_path(appointment), method: :delete, class: "btn btn-danger" %>
+    <%= button_to "Edytuj", edit_appointment_path(appointment), params: { patient: appointment.patient }, method: :get, class: "btn-primary" %>
+    <%= button_to "Usuń", appointment_path(appointment), method: :delete, class: "btn-danger" %>
   </div>
 </div>

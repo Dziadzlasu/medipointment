@@ -15,4 +15,8 @@ class Patient < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["city", "created_at", "date_of_birth", "first_name", "id", "last_name", "pesel", "sex", "updated_at"]
+  end
 end

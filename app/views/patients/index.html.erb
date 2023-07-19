@@ -6,11 +6,12 @@
   <div class="flex">
 <table>
   <tr>
-    <th><%= link_to "Imię", :sort => "first_name"%> </th>
-    <th><%= link_to "Nazwisko", :sort => "last_name"%> </th>
-    <th><%= link_to "Data urodzenia", :sort => "date_of_birth"%> </th>
-    <th><%= link_to "Miasto", :sort => "city"%> </th>
+    <th><%= sort_link(@q, :first_name, "Imię", default_order: :desc)%> </th>
+    <th><%= sort_link(@q, :last_name, "Nazwisko", default_order: :desc)%> </th>
+    <th><%= sort_link(@q, :date_of_birth, "Data urodzenia", default_order: :desc)%> </th>
+    <th><%= sort_link(@q, :city, "Miasto", default_order: :desc)%> </th>
     <th><%= "Pesel" %> </th>
+    <th><%= "Wizyty" %> </th>
   </tr>
   <% @patients.each do |p| %>
   <tr>
@@ -19,6 +20,7 @@
     <td><%= p.date_of_birth %></td>
     <td><%= p.city %></td>
     <td><%= p.pesel %></td>
+    <td><%= link_to p.appointments.count, appointments_patient_path(p) %></td>
     <td><%= button_to "Dodaj wizytę", new_appointment_path, params: { patient: p }, method: :get, class: "btn btn-primary" %></td>
   </tr>
   <% end %>

@@ -1,7 +1,13 @@
 class PatientsController < ApplicationController
 
   def index
-    filtered = Patient.all.order(params[:sort])
-    @pagy, @patients = pagy(filtered.all, items: 30)
+    @q = Patient.ransack(params[:q])
+    @pagy, @patients = pagy(@q.result, items: 30)
+  end
+
+  def appointments
+    @patient = Patient.find(params[:id])
+    appointments = @patient.appointments
+    @pagy, @appointments = pagy(appointments.all, items: 30)
   end
 end

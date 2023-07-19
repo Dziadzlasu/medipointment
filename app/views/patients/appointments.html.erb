@@ -1,0 +1,24 @@
+<main class="container">
+<%= link_to sanitize("&larr; Powrót do listy pacjentów"), patients_path %>
+  <div class="h-8 text-xl">
+    Lista wizyt pacjenta <%= @patient.full_name %>
+  </div>
+
+  <div class="flex">
+<table>
+  <tr>
+    <th><%= "Imię i nazwisko lekarza" %> </th>
+    <th><%= "Data wizyty" %> </th>
+  </tr>
+  <% @appointments.each do |a| %>
+  <tr>
+    <td><%= a.physician.full_name %></td>
+    <td><%= a.start_time.strftime("%d-%m-%Y %H:%M") %></td>
+    <td><%= button_to "Edytuj", edit_appointment_path(a), params: { patient: @patient }, method: :get, class: "btn-primary" %></td>
+    <td><%= button_to "Odwołaj wizytę", appointment_path(a), method: :delete, class: "btn-danger" %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+  <%== pagy_nav(@pagy) %>
+</main>
