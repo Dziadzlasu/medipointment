@@ -1,6 +1,7 @@
 class PatientsController < ApplicationController
 
   def index
-    @patients = Patient.all
+    filtered = Patient.all.order(params[:sort])
+    @pagy, @patients = pagy(filtered.all, items: 30)
   end
 end

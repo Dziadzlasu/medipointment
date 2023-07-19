@@ -139,6 +139,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.3-arm64-darwin)
       racc (~> 1.4)
+    pagy (6.0.4)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -241,6 +242,8 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.30-arm64-darwin)
+      railties (>= 6.0.0)
     thor (1.2.2)
     timeout (0.4.0)
     turbo-rails (1.4.0)
@@ -279,6 +282,7 @@ DEPENDENCIES
   ffaker (~> 2.21)
   jbuilder
   jsbundling-rails
+  pagy
   pg (~> 1.1)
   pry (~> 0.14.2)
   pry-nav (~> 1.0)
@@ -292,6 +296,7 @@ DEPENDENCIES
   simple_form
   sprockets-rails
   stimulus-rails
+  tailwindcss-rails (~> 2.0)
   turbo-rails
   tzinfo-data
   web-console

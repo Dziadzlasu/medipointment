@@ -1,7 +1,28 @@
 <main class="container">
-  <div class="header">
-    <h1>Patients</h1>
+  <div class="h-8 text-xl">
+    Lista pacjentów
   </div>
 
-  <%= render @patients %>
+  <div class="flex">
+<table>
+  <tr>
+    <th><%= link_to "Imię", :sort => "first_name"%> </th>
+    <th><%= link_to "Nazwisko", :sort => "last_name"%> </th>
+    <th><%= link_to "Data urodzenia", :sort => "date_of_birth"%> </th>
+    <th><%= link_to "Miasto", :sort => "city"%> </th>
+    <th><%= "Pesel" %> </th>
+  </tr>
+  <% @patients.each do |p| %>
+  <tr>
+    <td><%= p.first_name %></td>
+    <td><%= p.last_name %></td>
+    <td><%= p.date_of_birth %></td>
+    <td><%= p.city %></td>
+    <td><%= p.pesel %></td>
+    <td><%= button_to "Dodaj wizytę", new_appointment_path, params: { patient: p }, method: :get, class: "btn btn-primary" %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+  <%== pagy_nav(@pagy) %>
 </main>

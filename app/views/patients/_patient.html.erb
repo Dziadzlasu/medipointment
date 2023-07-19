@@ -1,6 +1,11 @@
-<div class="patient">
-  <%= patient.full_name %>
-  <div class="patient__actions">
-    <%= button_to "Dodaj wizytę", new_appointment_path, params: { patient: patient }, method: :get, class: "btn btn-primary" %>
-  </div>
+<div class="flex">
+<table>
+  <tr>
+    <th><%= link_to "Imię", :sort => "first_name"%> </th>
+    <th><%= link_to "Nazwisko", :sort => "last_name"%> </th>
+    <th><%= link_to "Data urodzenia", :sort => "date_of_birth"%> </th>
+    <th><%= link_to "Miasto", :sort => "city"%> </th>
+    <th><%= "Pesel" %> </th>
+  </tr>
+  <%= button_to "Dodaj wizytę", new_appointment_path, params: { patient: patient }, method: :get, class: "btn btn-primary" %>
 </div>

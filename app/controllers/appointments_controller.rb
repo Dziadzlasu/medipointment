@@ -6,7 +6,6 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    binding.pry
     @appointment = Appointment.new
     @patient_id = params[:patient]
     @physicians = Physician.all
