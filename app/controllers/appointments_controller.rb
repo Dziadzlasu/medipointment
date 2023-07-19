@@ -7,7 +7,7 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new
-    @patient_id = params[:patient]
+    @patient_id = params[:patient_id]
     @physicians = Physician.all
   end
 
@@ -23,10 +23,11 @@ class AppointmentsController < ApplicationController
 
   def edit
     @physicians = Physician.all
-    @patient_id = params[:patient]
+    @patient_id = params[:patient_id]
   end
 
   def update
+    @physicians = Physician.all
     @appointment = Appointment.find(params[:id])
     if @appointment.update(appointment_params)
       redirect_to appointments_path, notice: "Appointment was successfully updated."

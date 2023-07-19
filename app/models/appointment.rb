@@ -22,7 +22,7 @@ class Appointment < ApplicationRecord
 
   def appointment_time
     return unless start_time
-    if Appointment.where(start_time: (start_time - 20.minutes)..(start_time + 20.minutes), physician_id: physician_id).any?
+    if Appointment.where(start_time: (start_time - 19.minutes)..(start_time + 19.minutes), physician_id: physician_id).any?
       errors.add(:base, "Appointment overlaps with existing appointment with this physician")
     end
   end

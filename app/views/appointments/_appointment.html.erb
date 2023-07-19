@@ -1,11 +1,12 @@
-<div class="appointment">
-  <%= appointment.physician.first_name %>
-  <%= appointment.physician.last_name %>
-  <%= appointment.patient.first_name %>
-  <%= appointment.patient.last_name %>
-  <%= appointment.price %> PLN
-  <div class="appointment_actions">
-    <%= button_to "Edytuj", edit_appointment_path(appointment), params: { patient: appointment.patient }, method: :get, class: "btn-primary" %>
-    <%= button_to "Usuń", appointment_path(appointment), method: :delete, class: "btn-danger" %>
-  </div>
-</div>
+<tr>
+  <td><%= appointment.physician.full_name %></td>
+  <td><%= appointment.start_time.strftime("%d-%m-%Y %H:%M") %></td>
+  <td><%= appointment.patient.full_name %></td>
+  <td><%= appointment.price %> PLN</td>
+  <td>
+    <div class="inline-flex">
+      <%= button_to "Edytuj", edit_appointment_path(appointment), params: { patient_id: appointment.patient }, method: :get, class: "btn-primary" %>
+      <%= button_to "Usuń", appointment_path(appointment), method: :delete, class: "btn-danger" %>
+    </div>
+  </td>
+</tr>

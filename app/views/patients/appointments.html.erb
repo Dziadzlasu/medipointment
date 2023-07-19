@@ -14,7 +14,7 @@
   <tr>
     <td><%= a.physician.full_name %></td>
     <td><%= a.start_time.strftime("%d-%m-%Y %H:%M") %></td>
-    <td><%= button_to "Edytuj", edit_appointment_path(a), params: { patient: @patient }, method: :get, class: "btn-primary" %></td>
+    <td><%= button_to "Edytuj", edit_appointment_path(a), params: { patient_id: @patient }, method: :get, class: "btn-primary" %></td>
     <td><%= button_to "Odwołaj wizytę", appointment_path(a), method: :delete, class: "btn-danger" %></td>
   </tr>
   <% end %>
