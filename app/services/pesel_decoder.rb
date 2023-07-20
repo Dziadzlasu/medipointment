@@ -1,5 +1,5 @@
-#based on activepesel gem - coudn't use it because provided pesels are invalid
-#original code at https://github.com/voytee/activepesel/
+# based on activepesel gem - coudn't use it because provided pesels are invalid
+# original code at https://github.com/voytee/activepesel/
 
 class PeselDecoder
   DELTA = {
@@ -48,11 +48,9 @@ class PeselDecoder
   end
 
   def get_date_of_birth(pesel)
-    begin
-      Date.new(year(pesel), month(pesel), day(pesel))
-    rescue ArgumentError
-      nil
-    end
+    Date.new(year(pesel), month(pesel), day(pesel))
+  rescue ArgumentError
+    nil
   end
 
   def get_sex(pesel)

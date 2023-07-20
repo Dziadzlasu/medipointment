@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:edit, :update, :destroy]
+  before_action :set_appointment, only: %i(edit update destroy)
 
   def index
     @appointments = Appointment.all
@@ -11,6 +11,11 @@ class AppointmentsController < ApplicationController
     @physicians = Physician.all
   end
 
+  def edit
+    @physicians = Physician.all
+    @patient_id = params[:patient_id]
+  end
+
   def create
     @appointment = Appointment.new(appointment_params)
 
@@ -19,11 +24,6 @@ class AppointmentsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @physicians = Physician.all
-    @patient_id = params[:patient_id]
   end
 
   def update
